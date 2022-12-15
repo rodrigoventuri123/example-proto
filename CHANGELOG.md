@@ -1,3 +1,10 @@
+# 1.0.0 (2022-12-15)
+
+
+### Features
+
+* **example:** test ([ddf633a](https://github.com/rodrigoventuri123/example-proto/commit/ddf633a35a141379307ae20dfefbb8439a49c314))
+
 ## [1.2.1](https://github.com/jozefcipa/ca101-proto/compare/v1.2.0...v1.2.1) (2020-05-16)
 
 
