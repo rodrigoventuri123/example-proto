@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package customers;
+
+option go_package = "customerspb";
+
+import "services/customer/messages-customer.proto";
+
+// Customer service
+service ReminderAPI {
+  rpc AddReminder (customers.AddCustomerRequest) returns (customers.AddCustomerResponse);
+}

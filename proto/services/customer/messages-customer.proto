@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package customers;
+
+option go_package = "customerspb";
+
+message AddCustomerRequest {
+  string name = 1;
+  string cpf = 2;
+  string email = 3;
+}
+
+message AddCustomerResponse {
+    string id = 1;
+  }
+
