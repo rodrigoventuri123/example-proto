@@ -3,7 +3,7 @@ name: "Protofiles stubs generator"
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
