@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/rodrigoventuri123/example-proto/compare/v1.0.0...v1.1.0) (2022-12-15)
+
+
+### Features
+
+* **example:** test -1 ([8753b42](https://github.com/rodrigoventuri123/example-proto/commit/8753b42dc692ec55a8bc22169b4664d9af5769b3))
+
 # 1.0.0 (2022-12-15)
 
 
