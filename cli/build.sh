@@ -82,6 +82,11 @@ for lang in "${SUPPORTED_LANGUAGES[@]}"; do
     -v $(pwd)/gen:/gen \
     "${DOCKER_IMAGE}${lang}"
 
+
+  npm install nestjs-proto-gen-ts
+  
+  tsproto --path ./proto --output gen
+
   # Send new version to Git repository
  sudo cp -R "gen/${lang}/." "repositories/${repository}"
  publish $repository $version
