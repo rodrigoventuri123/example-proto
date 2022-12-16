@@ -5,7 +5,7 @@
 # Exit on error
 set -e
 
-SUPPORTED_LANGUAGES=("nodejs")
+SUPPORTED_LANGUAGES=("nestjs")
 DOCKER_IMAGE=jozefcipa/protoc-
 GENERATED_BY=$(git remote get-url origin)
 
@@ -84,7 +84,7 @@ for lang in "${SUPPORTED_LANGUAGES[@]}"; do
 
 
   npm install nestjs-proto-gen-ts
-  
+
   tsproto --path ./proto --output gen
 
   # Send new version to Git repository
