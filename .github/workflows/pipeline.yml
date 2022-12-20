@@ -21,6 +21,9 @@ jobs:
       - name: Install semantic-release dependencies
         run: cd ./semantic-release && npm install --only=production
 
+      - name: Install nestjs-proto-gen-ts dependencies
+        run: npm -g install nestjs-proto-gen-ts
+
       - name: Start build
         run: bash ./cli/build.sh
         env:
