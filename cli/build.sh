@@ -5,7 +5,7 @@
 # Exit on error
 set -e
 
-SUPPORTED_LANGUAGES=("nestjs")
+SUPPORTED_LANGUAGES=("nestjs" "nodejs")
 DOCKER_IMAGE=jozefcipa/protoc-
 GENERATED_BY=$(git remote get-url origin)
 
@@ -83,9 +83,8 @@ for lang in "${SUPPORTED_LANGUAGES[@]}"; do
     "${DOCKER_IMAGE}${lang}"
 
 
-  npm install nestjs-proto-gen-ts
-
-  tsproto --path ./proto --output gen
+  # npm install nestjs-proto-gen-ts
+  # tsproto --path ./proto --output gen
 
   # Send new version to Git repository
  sudo cp -R "gen/${lang}/." "repositories/${repository}"
