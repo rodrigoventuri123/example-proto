@@ -30,7 +30,7 @@ function publish() {
   echo "Publish ${repository} - ${version}"
 
   enterDir "repositories/${repository}"
-  sudo cp ../../CHANGELOG.md README.md
+  # sudo cp ../../CHANGELOG.md README.md
   git add -N .
 
   if ! git diff --exit-code >/dev/null; then
