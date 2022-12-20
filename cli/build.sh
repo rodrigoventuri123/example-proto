@@ -27,6 +27,8 @@ function publish() {
   repository=$1
   version=$2
 
+  echo "Publish ${repository} - ${version}"
+
   enterDir "repositories/${repository}"
   cp ../../CHANGELOG.md README.md
   git add -N .
@@ -50,16 +52,22 @@ function publish() {
   leaveDir
 }
 
+echo "Start process"
+
 # Prepare directory for generated libraries []
 mkdir repositories
 
 pre_version=$(git describe --abbrev=0 --tags || true)
+
+echo "pre_version ${pre_version}"
 
 # Semantic release - get new version
 ./semantic-release/bin/semantic-release.js
 
 # Get newly created tag from semantic-version
 version=$(git describe --abbrev=0 --tags)
+
+echo "Get newly created tag from semantic-version ${version}"
 
 if [ "$pre_version" == "$version" ]; then
  echo "There was no new release. Stopping."
