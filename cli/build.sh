@@ -6,7 +6,6 @@
 set -e
 
 SUPPORTED_LANGUAGES=("nestjs")
-DOCKER_IMAGE=jozefcipa/protoc-
 GENERATED_BY=$(git remote get-url origin)
 
 REPOSITORY_PREFIX=example-proto
@@ -83,12 +82,6 @@ for lang in "${SUPPORTED_LANGUAGES[@]}"; do
   enterDir repositories
   git clone "https://${GH_TOKEN}@github.com/rodrigoventuri123/${repository}.git"
   leaveDir
-
-  # Generate library
-  # docker run \
-  #   -v $(pwd)/proto:/proto-defs \
-  #   -v $(pwd)/gen:/gen \
-  #   "${DOCKER_IMAGE}${lang}"
 
   tsproto --path ./proto --output "gen/${lang}"
 
