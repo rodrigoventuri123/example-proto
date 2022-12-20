@@ -95,7 +95,7 @@ for lang in "${SUPPORTED_LANGUAGES[@]}"; do
   sudo cp -R "proto/." "gen/${lang}"
 
   # Send new version to Git repository
- sudo cp -R "gen/${lang}/." "repositories/${repository}"
- publish $repository $version
+  sudo cp -R "gen/${lang}/." "repositories/${repository}"
+  publish $repository $version
 
 done
