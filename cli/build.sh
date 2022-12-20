@@ -5,7 +5,7 @@
 # Exit on error
 set -e
 
-SUPPORTED_LANGUAGES=("nestjs" "nodejs")
+SUPPORTED_LANGUAGES=("nestjs")
 DOCKER_IMAGE=jozefcipa/protoc-
 GENERATED_BY=$(git remote get-url origin)
 
@@ -77,14 +77,14 @@ for lang in "${SUPPORTED_LANGUAGES[@]}"; do
   leaveDir
 
   # Generate library
-  docker run \
-    -v $(pwd)/proto:/proto-defs \
-    -v $(pwd)/gen:/gen \
-    "${DOCKER_IMAGE}${lang}"
+  # docker run \
+  #   -v $(pwd)/proto:/proto-defs \
+  #   -v $(pwd)/gen:/gen \
+  #   "${DOCKER_IMAGE}${lang}"
 
 
-  # npm install nestjs-proto-gen-ts
-  # tsproto --path ./proto --output gen
+  sudo npm install nestjs-proto-gen-ts
+  sudo tsproto --path ./proto --output gen
 
   # Send new version to Git repository
  sudo cp -R "gen/${lang}/." "repositories/${repository}"
