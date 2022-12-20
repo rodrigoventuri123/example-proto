@@ -69,7 +69,7 @@ fi
 # Iterate over available languages
 for lang in "${SUPPORTED_LANGUAGES[@]}"; do
   repository="${REPOSITORY_PREFIX}-${lang}"
-  echo "$(pwd) Generating proto stubs for ${lang}"
+  echo "$(pwd) [] Generating proto stubs for ${lang}"
 
   # Prepare repository
   enterDir repositories
