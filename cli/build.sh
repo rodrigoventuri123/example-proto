@@ -92,6 +92,8 @@ for lang in "${SUPPORTED_LANGUAGES[@]}"; do
 
   tsproto --path ./proto --output "gen/${lang}"
 
+  sudo cp -R "proto/." "gen/${lang}"
+
   # Send new version to Git repository
  sudo cp -R "gen/${lang}/." "repositories/${repository}"
  publish $repository $version
