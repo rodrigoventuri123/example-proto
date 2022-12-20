@@ -82,7 +82,7 @@ for lang in "${SUPPORTED_LANGUAGES[@]}"; do
   #   -v $(pwd)/gen:/gen \
   #   "${DOCKER_IMAGE}${lang}"
 
-  tsproto --path ./proto --output gen
+  tsproto --path ./proto --output "gen/${lang}"
 
   # Send new version to Git repository
  sudo cp -R "gen/${lang}/." "repositories/${repository}"
