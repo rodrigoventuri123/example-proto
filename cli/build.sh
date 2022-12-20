@@ -66,7 +66,7 @@ echo "pre_version ${pre_version}"
 # Get newly created tag from semantic-version
 version=$(git describe --abbrev=0 --tags)
 
-echo "Get newly created tag from semantic-version ${version}"
+echo "Get newly created tag from semantic-versioasn ${version}"
 
 if [ "$pre_version" == "$version" ]; then
  echo "There was no new release. Stopping."
