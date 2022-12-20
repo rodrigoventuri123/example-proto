@@ -50,7 +50,7 @@ function publish() {
   leaveDir
 }
 
-# Prepare directory for generated libraries
+# Prepare directory for generated libraries []
 mkdir repositories
 
 pre_version=$(git describe --abbrev=0 --tags || true)
@@ -86,6 +86,6 @@ for lang in "${SUPPORTED_LANGUAGES[@]}"; do
 
   # Send new version to Git repository
  sudo cp -R "gen/${lang}/." "repositories/${repository}"
- publish $repository "v2.1.1"
+ publish $repository $version
 
 done
