@@ -61,7 +61,7 @@ pre_version=$(git describe --abbrev=0 --tags || true)
 echo "pre_version ${pre_version}"
 
 # Semantic release - get new version
-# ./semantic-release/bin/semantic-release.js
+./semantic-release/bin/semantic-release.js
 
 # Get newly created tag from semantic-version
 version=$(git describe --abbrev=0 --tags)
